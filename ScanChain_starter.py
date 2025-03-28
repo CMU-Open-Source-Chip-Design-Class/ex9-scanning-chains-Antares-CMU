@@ -287,9 +287,6 @@ async def test(dut):
     for i, bit in enumerate(out_bits):
         result |= (bit << i)
 
-    # Optional: display chain registers before/after the clock cycle.
-    print_chain(chain)
-
     if result != expected:
         raise cocotb.result.TestFailure(f"Adder result incorrect: got {result}, expected {expected}")
     else:
